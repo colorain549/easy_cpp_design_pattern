@@ -174,7 +174,7 @@ private:
 };
 ```
 * 使得用户, 对单个对象和组合对象的使用, 具有一致性
-### 注意⚠️
+### ⚠️注意
 ```
 class Component {...};
 
@@ -182,23 +182,23 @@ class Department: public Component{
 public:
     ...
 private:
-    // !!!注意!!!
+    // ⚠️注意
     vector<Component*> _children;
 }
 
 class Company {
 public:
-    // !!!注意, 初始化root !!!
+    // ⚠️注意, 初始化root
     Company(cpnName):_cpnName(cpnName), _root(new Department(_cpuName)){}
 
-    // !!!注意!!!
+    // ⚠️注意
     void display(){
         cout << "Company Structure:" << endl;
         _root->display(0);
     }
 
 private:
-    // !!!注意!!!
+    // ⚠️注意
     Department *_root;
 };
 ```
@@ -221,9 +221,7 @@ public:
     void brew() override {...}
 };
 
-// !!!
-// !!!!!!⚠️注意这里, 以公有方式, 继承自Coffee!!!!!!
-// !!!
+// ⚠️注意这里, 以公有方式, 继承自Coffee
 class Decorate: public Coffee{
 public:
     Decorate(Coffee *coffee):_coffee(coffee){}
@@ -303,7 +301,7 @@ public:
     void update(int hour) override {...}
 };
 ```
-### 注意⚠️
+### ⚠️注意
 ```
 // 具体目标
 class Clock: public Subject {
