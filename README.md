@@ -174,7 +174,7 @@ private:
 };
 ```
 * 使得用户, 对单个对象和组合对象的使用, 具有一致性
-### 注意
+### 注意⚠️
 ```
 class Component {...};
 
@@ -222,7 +222,7 @@ public:
 };
 
 // !!!
-// !!!!!!注意这里, 以公有方式, 继承自Coffee!!!!!!
+// !!!!!!⚠️注意这里, 以公有方式, 继承自Coffee!!!!!!
 // !!!
 class Decorate: public Coffee{
 public:
@@ -303,7 +303,7 @@ public:
     void update(int hour) override {...}
 };
 ```
-### 注意
+### 注意⚠️
 ```
 // 具体目标
 class Clock: public Subject {
