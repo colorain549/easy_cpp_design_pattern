@@ -174,6 +174,34 @@ private:
 };
 ```
 * 使得用户, 对单个对象和组合对象的使用, 具有一致性
+### 注意
+```
+class Component {...};
+
+class Department: public Component{
+public:
+    ...
+private:
+    // !!!注意!!!
+    vector<Component*> _children;
+}
+
+class Company {
+public:
+    // !!!注意, 初始化root !!!
+    Company(cpnName):_cpnName(cpnName), _root(new Department(_cpuName)){}
+
+    // !!!注意!!!
+    void display(){
+        cout << "Company Structure:" << endl;
+        _root->display(0);
+    }
+
+private:
+    // !!!注意!!!
+    Department *_root;
+};
+```
 
 ## 咖啡加糖(4.4)
 1. 组件（Component）(类Coffee)
@@ -273,7 +301,24 @@ class Student: public Observer {
 public:
     ...
     void update(int hour) override {...}
-}
+};
+```
+### 注意
+```
+// 具体目标
+class Clock: public Subject {
+public:
+    ...
+    const vector<Observer*> &getObservers const {...}
+    void tick(){...}
+};
+
+// 具体观察者
+class Student: public Observer {
+public:
+    ...
+    void update(int hour) override {...}
+};
 ```
 
 ## 超市打折(5.9)
