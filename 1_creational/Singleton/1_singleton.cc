@@ -14,21 +14,24 @@ using std::string;
 class ShoppintCartManager
 {
 private:
-    // 私有构造函数
+    // (1)私有构造函数
     ShoppintCartManager() {}
 
 public:
+    // (2)公有有静态函数
     static ShoppintCartManager &getInstance()
     {
         static ShoppintCartManager instance;
         return instance;
     }
 
+    // (3)添加项目
     void addItem(const string &item, int quantity)
     {
         _cart[item] += quantity;
     }
 
+    // (4)打印项目清单
     void display() const
     {
         for (const auto &it : _cart)
@@ -38,7 +41,8 @@ public:
         cout << endl;
     }
 
-    // 删除拷贝构造函数和赋值运算符
+    // (5)使用=delete阻止拷贝类对象
+    // 将拷贝构造函数和拷贝赋值运算符 定义为删除的函数 阻止拷贝
     ShoppintCartManager(const ShoppintCartManager &) = delete;
     ShoppintCartManager &operator=(const ShoppintCartManager &) = delete;
 
