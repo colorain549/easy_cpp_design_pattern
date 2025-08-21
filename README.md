@@ -134,7 +134,6 @@ static ShoppingCartManager *getInstance() {...}
 * 使得接口不兼容而不能一起工作的类, 可以一起工作
 ```
 // 适配器(继承自USB 原有USB接口)
-
 class Adapter: public USB {
 private:
     // 将USB接口转为TypeC接口
