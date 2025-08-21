@@ -31,11 +31,11 @@ public:
     }
 };
 
-// 3. 适配器(原有USB接口)
+// 3. 适配器(继承自USB 原有USB接口)
 class Adapter : public USB
 {
-    // 将USB接口转为TypeC接口
 private:
+    // 将USB接口转为TypeC接口
     TypeC *_typeC;
 
 public:

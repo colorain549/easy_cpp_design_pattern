@@ -133,11 +133,16 @@ static ShoppingCartManager *getInstance() {...}
 * 一个类的接口, 转换成客户希望的, 另一个接口
 * 使得接口不兼容而不能一起工作的类, 可以一起工作
 ```
-class TypeCToUSBAdapter: public USB {
+// 适配器(继承自USB 原有USB接口)
+
+class Adapter: public USB {
 private:
+    // 将USB接口转为TypeC接口
     TypeC *_typeC;
 public:
-    TypeCToUSBAdapter(TypeC *typeC):_typeC(typeC){}
+    // 初始化TypeC接口
+    Adapter(TypeC *typeC):_typeC(typeC){}
+    // 用USB接口实现TypeC接口 输出TypeC
     void chargeWithUSB() override {
         _typeC->chargeWithTypeC();
     }
