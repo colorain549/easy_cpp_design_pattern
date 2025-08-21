@@ -31,14 +31,17 @@ public:
     }
 };
 
-// 3. 适配器
-class TypeCToUSBAdapter : public USB
+// 3. 适配器(原有USB接口)
+class Adapter : public USB
 {
+    // 将USB接口转为TypeC接口
 private:
     TypeC *_typeC;
 
 public:
-    TypeCToUSBAdapter(TypeC *typeC) : _typeC(typeC) {}
+    // 初始化TypeC接口
+    Adapter(TypeC *typeC) : _typeC(typeC) {}
+    // 用USB接口实现TypeC接口 输出TypeC
     void chargeWithUSB() override
     {
         _typeC->chargeWithTypeC();
@@ -78,11 +81,11 @@ int main()
         {
             // 电脑的TypeC口
             TypeC *typeCComputer = new TypeCComputer();
-            // 适配器的TypeC与电脑连接
-            USB *typeCToUSBdapter = new TypeCToUSBAdapter(typeCComputer);
-            // 使用USB接口实现TypeC的功能
-            // 这里的 chargeWithUSB 输出TypeC
-            typeCToUSBdapter->chargeWithUSB();
+            // 使用USB接口的适配器 将适配器的TypeC端与电脑连接
+            USB *adapter = new Adapter(typeCComputer);
+            // 使用USB接口的适配器 实现TypeC的功能
+            // 使用USB接口的适配器 改输出为TypeC(原输出为USB)
+            adapter->chargeWithUSB();
         }
     }
 
