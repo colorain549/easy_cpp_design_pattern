@@ -32,6 +32,7 @@
 9. 咖啡馆（2）（1抽象类2具体类）
 
 ## 家具工厂(3.1)
+### 参与者
 1. 抽象工厂（Abstract Factory）(类Factory)
 2. 具体工厂（Concrete Factory）(类ClassicalFactory, 类ModernFactory)
 3. 抽象产品（Abstract Product）(类Chair, 类Sofa)
@@ -67,6 +68,7 @@ public:
 ```
 
 ## 积木工厂(3.3)
+### 参与者
 1. 产品（Product）(类Block)
 2. 具体产品（Concrete Product）(类CircleBlock, 类SquareBlock)
 3. 创建者（Creator）(类Factory)
@@ -114,6 +116,7 @@ public:
 ```
 
 ## 小明的购物车(3.5)
+### 参与者
 1. 单例/单件（Singleton）
 ### 目的
 * 保证一个类仅有一个实例
@@ -125,6 +128,7 @@ static ShoppingCartManager *getInstance() {...}
 ```
 
 ## 扩展坞(4.1)
+### 参与者
 1. 目标（Target）(类USB)
 2. 客户端（Client）(main)
 3. 被适应者（Adaptee）(类TypeC, 类TypeCComputer)
@@ -150,6 +154,7 @@ public:
 
 ## 公司组织架构(4.3)
 ![组合](/images/composite.png)
+### 参与者
 1. 组件（Component）(类Component)
 2. 叶结点（Leaf）(类Employee)
 3. 组合（Composite）(类Department)
@@ -210,6 +215,7 @@ private:
 
 ## 咖啡加糖(4.4)
 ![装饰](/images/decorate.png)
+### 参与者
 1. 组件（Component）(类Coffee)
 2. 具体组件（Concrete Component）(类AmericanCoffee, 类Latte)
 3. 装饰者（Decorator）(类Decorate)
@@ -265,6 +271,7 @@ int main(){
 
 ## 时间观察者(5.7)
 ![观察者](/images/observer.png)
+### 参与者
 1. 目标（Subject）(类Subject, 接口register, 接口remove, 接口notify)
 2. 观察者（Observer）(类Observer, 接口update)
 3. 具体目标（Concrete Subject）(类Clock, 成员函数getObservers(), 成员函数tick())
@@ -328,6 +335,7 @@ public:
 
 ## 超市打折(5.9)
 ![策略](/images/strategy.png)
+### 参与者
 1. 策略（Strategy）(类Strategy)
 2. 具体策略（Concrete Strategy）(类NinetyPercentStrategy, 类ReduceStrategy)
 3. 上下文（Context）(类Context)
@@ -355,6 +363,7 @@ public:
 
 ## 咖啡店(5.10)
 ![模板方法](/images/template_method.png)
+### 参与者
 1. 抽象类（Abstract Class）(类Coffee)
 2. 具体类（Concrete Class）(类BlackCoffee, 类Latte)
 ### 目的
